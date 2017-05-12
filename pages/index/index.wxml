@@ -1,0 +1,3 @@
+<view  bindtap="bindViewTap" class="background-image">
+    <image  src="../image/home.png" class="background-image"></image>
+  </view>

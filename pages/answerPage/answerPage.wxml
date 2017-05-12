@@ -1,0 +1,40 @@
+<import src="../style/head.wxml" />
+<import src="../style/foot.wxml" />
+
+<view  class="background">
+
+  <view class="page-head">
+    <view style="font-size:17pt;">模拟考试{{count}}</view>
+  </view>
+
+  <view class="page-body">
+   
+    <view class="page-section">
+      <view class="textarea-wrp">
+        <textarea bindblur="bindTextAreaBlur" value="{{index+1}}.{{questions[index].title}}" auto-height disabled="true"/>
+        <textarea bindblur="bindTextAreaBlur" value="题型:{{questions[index].que4=='放弃'?'判断':'单选'}}" auto-height disabled="true"/>
+      </view>
+    </view>
+
+    <view class="btn-area" id="buttonContainer">
+      <button type="{{typeA}}" bindtap="answer1">{{questions[index].que1}}</button>
+      <button type="{{typeB}}" bindtap="answer2">{{questions[index].que2}}</button>
+      <button type="{{typeC}}" bindtap="answer3">{{questions[index].que3=='放弃'?'':questions[index].que3}}</button>
+      <button type="{{typeD}}" bindtap="answer4">{{questions[index].que4=='放弃'?'':questions[index].que4}}</button>
+    </view>
+
+  </view>
+
+<!--<view style="margin-left:auto;margin-right:2px;width:100px;">
+  <button class="mini-btn" type="primary" bindtap="next" size="mini">下一题</button>
+</view>
+  <button style="" class="mini-btn" type="primary" bindtap="submitType" size="mini">交  卷</button>-->
+
+<view class="page-section-spacing">
+        <view class="flex-wrp" style="flex-direction:row;">
+          <view class="flex-item demo-text-1"><button class="mini-btn" type="primary" bindtap="submitType" size="mini">交  卷</button></view>
+          <view class="flex-item demo-text-2"></view>
+          <view class="flex-item demo-text-3"><button class="mini-btn" type="primary" bindtap="next" size="mini">下一题</button></view>
+        </view>
+      </view>
+</view>

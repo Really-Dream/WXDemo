@@ -1,0 +1,43 @@
+<import src="../style/head.wxml" />
+<import src="../style/foot.wxml" />
+
+<view  class="background">
+
+ <template is="head" data="{{title: ''}}"/>
+
+  <view class="page-body">
+   
+  <form catchsubmit="formSubmit">
+      <view class="page-section">
+      <view class="weui-cells__title">账号：</view>
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_input">
+          <input class="weui-input" value="{{userId}}" maxlength="10" name="userId" bindinput="bindKeyInput" placeholder="请输入账号"/>
+        </view>
+      </view>
+    </view>
+
+    <view class="page-section">
+      <view class="weui-cells__title">密码：</view>
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_input">
+          <input class="weui-input" value="{{password}}" password type="text" name="password" placeholder="请输入密码" />
+        </view>
+      </view>
+    </view>
+
+      <view class="page-section page-section-gap">
+      <checkbox-group name="checkbox">
+        <label class="checkbox"><checkbox value="cb"  checked="true"/>保存密码</label>
+      </checkbox-group>
+      </view>
+
+    <view class="btn-area" id="buttonContainer">
+      <button type="primary" formType="submit">登录</button>
+      <button type="primary" bindtap="register">注册</button>
+    </view>
+
+</form>
+  </view>
+
+</view>

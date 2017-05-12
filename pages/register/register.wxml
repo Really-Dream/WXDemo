@@ -1,0 +1,59 @@
+<import src="../style/head.wxml" />
+<import src="../style/foot.wxml" />
+
+<view  class="background">
+
+ <!--<template is="head" data="{{title: ''}}"/>-->
+
+  <view class="page-body">
+   
+  <form catchsubmit="formSubmit" catchreset="formReset">
+    <view class="page-section">
+      <view class="weui-cells__title">姓名：</view>
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_input">
+          <input class="weui-input"  maxlength="10" name="userName" bindinput="bindKeyInput" placeholder="真实姓名"/>
+        </view>
+      </view>
+    </view>
+
+    <view class="page-section">
+      <view class="weui-cells__title">账号：</view>
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_input">
+          <input class="weui-input"  maxlength="10" name="userId" bindinput="bindKeyInput" placeholder="登录账号"/>
+        </view>
+      </view>
+    </view>
+
+    <view class="page-section">
+      <view class="weui-cells__title">密码：</view>
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_input">
+          <input class="weui-input" password type="text" name="password" placeholder="请输入密码" />
+        </view>
+      </view>
+    </view>
+
+      <view class="weui-cells__title">组织：</view>
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_input">
+          <view class="weui-cell__hd">
+            <view class="weui-label">当前选择</view>
+          </view>
+          <view class="weui-cell__bd">
+            <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+              <view class="weui-input">{{array[index]}}</view>
+            </picker>
+          </view>
+        </view>
+      </view>
+
+    <view class="btn-area" id="buttonContainer">
+      <button type="primary" formType="submit">注册</button>
+    </view>
+
+</form>
+  </view>
+
+</view>

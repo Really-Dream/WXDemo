@@ -1,0 +1,48 @@
+@import "../common/weui.wxss";
+
+.page-section{
+  margin-bottom: 20rpx;
+}
+
+.background{
+  width: 100%;
+  height: 100%;
+  background-image: url(http://wx4.sinaimg.cn/mw690/becbe214gy1ff8jol0yhuj20tw13vna7.jpg);
+  background-repeat: no-repeat;
+  background-size: cover
+}
+
+textarea {
+    width: 700rpx;
+    padding: 25rpx 0;
+}
+.textarea-wrp {
+    padding: 0 25rpx;
+    /*background-color: #fff;*/
+}
+
+button{
+  margin-top: 30rpx;
+  margin-bottom: 30rpx;
+}
+.button-sp-area{
+  margin: 0 auto;
+  width: 60%;
+}
+.mini-btn{
+  margin-right: 10rpx;
+}
+.flex-wrp{
+  margin-top: 60rpx;
+  display:flex;
+}
+.flex-item{
+  width: 200rpx;
+  /*height: 300rpx;*/
+  font-size: 26rpx;
+}
+.flex-item-V{
+  margin: 0 auto;
+  width: 300rpx;
+  height: 200rpx;
+}

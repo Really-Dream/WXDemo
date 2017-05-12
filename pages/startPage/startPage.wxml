@@ -1,0 +1,16 @@
+<import src="../style/head.wxml" />
+<import src="../style/foot.wxml" />
+
+<view  >
+
+ <template is="head" data="{{title: ''}}"/>
+
+  <view class="page-body">
+   
+    <view class="btn-area" id="buttonContainer">
+      <button type="primary" bindtap="startPage">模拟考试</button>
+    </view>
+
+  </view>
+
+</view>

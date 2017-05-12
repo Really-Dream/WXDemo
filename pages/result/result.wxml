@@ -1,0 +1,29 @@
+<import src="../style/head.wxml" />
+<import src="../style/foot.wxml" />
+
+<view class="background" >
+
+<view class="page-head">
+    <view style="font-size:20pt;">我在党员微课堂测试中得分：{{trueAnswer*10}}分</view>
+  </view>
+ <!--<template is="head" data="{{title: '我在党员微课堂测试中得分：'+trueAnswer*10+'分'}}"/>-->
+
+  <view class="page-body">
+   
+    <view class="page-section">
+      <view class="textarea-wrp">
+        <textarea style="font-size:14pt;" value="本次测试共10题" auto-height disabled="true"/>
+        <textarea style="font-size:14pt;" value="已达：{{trueAnswer+falseAnswer}}" auto-height disabled="true"/>
+        <textarea style="font-size:14pt;" value="未答：{{10-trueAnswer-falseAnswer}}" auto-height disabled="true"/>
+        <textarea style="font-size:14pt;" value="答对：{{trueAnswer}}" auto-height disabled="true"/>
+      </view>
+    </view>
+
+    <view class="btn-area" id="buttonContainer">
+      <!--<button type="primary" bindtap="share">分享</button>-->
+      <button type="primary" bindtap="start">模拟考试</button>
+    </view>
+
+  </view>
+
+</view>
