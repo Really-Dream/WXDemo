@@ -14,7 +14,7 @@ Page({
         })
           var that = this;
         wx.request({
-            url: 'https://1.1059141989.applinzi.com/downloadAddress',
+          url: 'https://www.whoryou.cn/AppDemo/downloadAddress',
             data: {},
             header: {'content-type': 'application/json'},
             success: function(res) {

@@ -20,7 +20,7 @@ Page({
       var appInstance = getApp();
       var that = this;
         wx.request({
-            url: 'https://1.1059141989.applinzi.com/getTitle',
+          url: 'https://www.whoryou.cn/AppDemo/getTitle',
             data: {},
             header: {'content-type': 'application/json'},
             success: function(res) {
@@ -31,7 +31,7 @@ Page({
             }
         })
         wx.request({
-            url: 'https://1.1059141989.applinzi.com/count',
+          url: 'https://www.whoryou.cn/AppDemo/count',
             data: {userid : appInstance.globalData.userInfo},
             header: {'content-type': 'application/json'},
             success: function(res) {
@@ -205,7 +205,7 @@ Page({
     appInstance.globalData.trueAnswer = this.data.trueAnswer;
     appInstance.globalData.falseAnswer = this.data.falseAnswer;
     wx.request({
-      url: 'https://1.1059141989.applinzi.com/result',
+      url: 'https://www.whoryou.cn/AppDemo/result',
       data: {
         userid:appInstance.globalData.userInfo,
         grade:this.data.trueAnswer*10

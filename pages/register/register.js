@@ -1,7 +1,7 @@
 Page({
   data: {
     focus: false,
-	index:"",
+	index:0,
 	array:['中国', '美国', '巴西', '日本'],
 	org: ""
   },
@@ -58,61 +58,64 @@ Page({
 
   },
   formSubmit: function (e) {
-    console.log('form发生了submit事件，携带数据为：', e.detail.value)
-	console.log(this.data.index);
-	console.log(this.data.array[index]);
+    var that =  this;
+    console.log(e.detail.value.userId.length);
+    if (e.detail.value.userId.length<=0){
+      wx.showToast({
+        title: '请输入账号！',
+        icon: 'success',
+        duration: 2000
+      })
+    } else if (e.detail.value.userId.password <= 0) {
+      wx.showToast({
+        title: '请输入密码！',
+        icon: 'success',
+        duration: 2000
+      })
+    } else if (e.detail.value.userId.userName <= 0) {
+      wx.showToast({
+        title: '请输入姓名！',
+        icon: 'success',
+        duration: 2000
+      })
+    }else{
     wx.request({
-      url: 'https://www.whoryou.cn/AppDemo/register',
+      url: 'https://www.whoryou.cn/AppDemo/create',
       data: {
         userid: e.detail.value.userId ,
         pwd: e.detail.value.password,
-		org:this.data.array[index],
-		usernam:e.detail.value.userName
+        org: that.data.array[that.data.index],
+        username:e.detail.value.userName
       },
       header: {
           'content-type': 'application/json'
       },
       success: function(res) {
-        if(res.data == "true"){
+        if (res.data == "true"){
            console.log(res.data)
            wx.showToast({
              title: '成功！',
              icon: 'success',
              duration: 2000
            })
-           var appInstance = getApp();
-           appInstance.globalData.userInfo = e.detail.value.userId;
            wx.redirectTo({
-            url: '../startPage/startPage'
+             url: '../login/login'
           })
-          wx.setStorage({
-            key:"userID",
-            data:e.detail.value.userId
-          })
-          if(e.detail.value.checkbox.length>0){  
-            wx.setStorage({
-              key:"password",
-              data:e.detail.value.password
-            })
-          }else{
-            wx.removeStorage({
-              key:"password"
-            })
-          }
-         }else{
+        } else if (res.data == "repeat"){
           wx.showToast({
-             title: '用户名或密码错误！',
+             title: 'ID重复',
              icon: 'success',
              duration: 2000
            })
+        }else{
+          wx.showToast({
+            title: '未知错误，请联系管理员!',
+            icon: 'success',
+            duration: 2000
+          })
         }
       }
     })
-  },
-  register: function(e) {
-     wx.navigateTo({
-      //  wx.redirectTo({
-        url: '../register/register'
-      })
-  },
+  }
+  }
 })

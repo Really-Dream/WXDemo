@@ -45,7 +45,7 @@ Page({
   formSubmit: function (e) {
     console.log('form发生了submit事件，携带数据为：', e.detail.value)
     wx.request({
-      url: 'https://1.1059141989.applinzi.com/login', //仅为示例，并非真实的接口地址
+      url: 'https://www.whoryou.cn/AppDemo/login', //仅为示例，并非真实的接口地址
       data: {
         userid: e.detail.value.userId ,
         pwd: e.detail.value.password
