@@ -14,7 +14,7 @@ Page({
         })
           var that = this;
         wx.request({
-          url: 'https://www.whoryou.cn/AppDemo/downloadAddress',
+          url: 'https://www.whoisyours.cn/AppDemo/downloadAddress',
             data: {},
             header: {'content-type': 'application/json'},
             success: function(res) {
