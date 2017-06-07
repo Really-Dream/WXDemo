@@ -23,18 +23,13 @@
       <button type="{{typeD}}" bindtap="answer4">{{questions[index].que4=='放弃'?'':questions[index].que4}}</button>
     </view>
 
-  </view>
+    <view class="page-section-spacing">
+            <view class="flex-wrp" style="flex-direction:row;">
+              <view class="flex-item demo-text-1"><button class="mini-btn" type="primary" bindtap="submitType" size="mini">交  卷</button></view>
+              <view class="flex-item demo-text-2"></view>
+              <view class="flex-item demo-text-3"><button class="mini-btn" type="primary" bindtap="next" size="mini">下一题</button></view>
+            </view>
+          </view>
+    </view>
 
-<!--<view style="margin-left:auto;margin-right:2px;width:100px;">
-  <button class="mini-btn" type="primary" bindtap="next" size="mini">下一题</button>
-</view>
-  <button style="" class="mini-btn" type="primary" bindtap="submitType" size="mini">交  卷</button>-->
-
-<view class="page-section-spacing">
-        <view class="flex-wrp" style="flex-direction:row;">
-          <view class="flex-item demo-text-1"><button class="mini-btn" type="primary" bindtap="submitType" size="mini">交  卷</button></view>
-          <view class="flex-item demo-text-2"></view>
-          <view class="flex-item demo-text-3"><button class="mini-btn" type="primary" bindtap="next" size="mini">下一题</button></view>
-        </view>
-      </view>
 </view>

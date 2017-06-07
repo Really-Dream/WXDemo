@@ -7,18 +7,19 @@
 .background{
   width: 100%;
   /*mode:"aspectFit";*/
-  height: auto!important;
+  height: 100%;
   background-image: url(http://wx4.sinaimg.cn/mw690/becbe214gy1ff8jol0yhuj20tw13vna7.jpg);
-  background-repeat: no-repeat;
-  background-size: cover
+  background-repeat: round;
+  background-size: cover;
+  background-attachment:local;
 }
 
 textarea {
     width: 700rpx;
-    padding: 25rpx 0;
+    padding: 10rpx 0;
 }
 .textarea-wrp {
-    padding: 0 25rpx;
+    padding: 0 15rpx;
     /*background-color: #fff;*/
 }
 

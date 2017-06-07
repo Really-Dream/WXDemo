@@ -8,6 +8,6 @@
   width: 100%;
   height: 100%;
   background-image: url(http://wx2.sinaimg.cn/mw690/becbe214gy1ff8jofx40mj21kw2i2b2a.jpg);
-  background-repeat: no-repeat;
+  background-repeat: round;
   background-size: cover
 }
