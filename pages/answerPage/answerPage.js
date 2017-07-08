@@ -11,7 +11,9 @@ Page({
     typeD: 'default',
     isClick : 0,
     trueAnswer:0,
-    falseAnswer:0
+    falseAnswer:0,
+    hidden: true, //等待的展示与隐藏的控制
+    buthidden: false //按钮的可用和不可用的控制
   },
   bindTextAreaBlur: function(e) {
     console.log(e.detail.value)
@@ -201,6 +203,7 @@ Page({
     }
   },
   submitType: function(e) {
+    console.log(1);
     var appInstance = getApp();
     appInstance.globalData.trueAnswer = this.data.trueAnswer;
     appInstance.globalData.falseAnswer = this.data.falseAnswer;
@@ -230,6 +233,13 @@ Page({
           }
       }
    })
+  },
+  primary: function (e) {
+    //显示等待、禁用按钮，后台返回错误则将true和false对调一下就是隐藏等待、启用按钮
+    this.setData({
+      hidden: false,
+      buthidden: true
+    })
   }
 
 })

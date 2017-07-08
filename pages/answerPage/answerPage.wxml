@@ -1,11 +1,18 @@
 <import src="../style/head.wxml" />
 <import src="../style/foot.wxml" />
 
-<view  class="background">
+<view>
 
-  <view class="page-head">
-    <view style="font-size:17pt;">模拟考试{{count}}</view>
+  <view class="background">
   </view>
+
+    <view class="page-head" style="position:relative;z-index:100">
+      <view style="font-size:17pt;">模拟考试{{count}}</view>
+    </view>
+
+<loading hidden="{{hidden}}">
+    注册中...
+</loading>
 
   <view class="page-body">
    
@@ -24,12 +31,13 @@
     </view>
 
     <view class="page-section-spacing">
-            <view class="flex-wrp" style="flex-direction:row;">
-              <view class="flex-item demo-text-1"><button class="mini-btn" type="primary" bindtap="submitType" size="mini">交  卷</button></view>
-              <view class="flex-item demo-text-2"></view>
-              <view class="flex-item demo-text-3"><button class="mini-btn" type="primary" bindtap="next" size="mini">下一题</button></view>
-            </view>
-          </view>
+        <view class="flex-wrp" style="flex-direction:row;">
+          <view class="flex-item demo-text-1"><button class="mini-btn" type="primary" bindtap="submitType" size="mini" disabled="{{buthidden}}">交  卷</button></view>
+          <view class="flex-item demo-text-2"></view>
+          <view class="flex-item demo-text-3"><button class="mini-btn" type="primary" bindtap="next" size="mini">下一题</button></view>
+        </view>
+    </view>
+
     </view>
 
 </view>
