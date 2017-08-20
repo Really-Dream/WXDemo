@@ -22,7 +22,7 @@ Page({
       var appInstance = getApp();
       var that = this;
         wx.request({
-          url: 'https://www.whoisyours.cn/AppDemo/getTitle',
+          url: appInstance.globalData.url+'getTitle',
             data: {},
             header: {'content-type': 'application/json'},
             success: function(res) {
@@ -33,7 +33,7 @@ Page({
             }
         })
         wx.request({
-          url: 'https://www.whoisyours.cn/AppDemo/count',
+          url: appInstance.globalData.url+'count',
             data: {userid : appInstance.globalData.userInfo},
             header: {'content-type': 'application/json'},
             success: function(res) {
@@ -208,7 +208,7 @@ Page({
     appInstance.globalData.trueAnswer = this.data.trueAnswer;
     appInstance.globalData.falseAnswer = this.data.falseAnswer;
     wx.request({
-      url: 'https://www.whoisyours.cn/AppDemo/result',
+      url: appInstance.globalData.url +'result',
       data: {
         userid:appInstance.globalData.userInfo,
         grade:this.data.trueAnswer*10

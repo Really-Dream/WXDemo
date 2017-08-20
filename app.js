@@ -27,6 +27,7 @@ App({
   globalData:{
     userInfo:null,
     trueAnswer:0,
-    falseAnswer:0
+    falseAnswer:0,
+    url:"https://1059141989.applinzi.com/"
   }
 })

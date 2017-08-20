@@ -43,9 +43,10 @@ Page({
     })
   },
   formSubmit: function (e) {
-    console.log('form发生了submit事件，携带数据为：', e.detail.value)
+    console.log('form发生了submit事件，携带数据为：', e.detail.value);
+    var appInstance = getApp();
     wx.request({
-      url: 'https://www.whoisyours.cn/AppDemo/login', //仅为示例，并非真实的接口地址
+      url: appInstance.globalData.url+'login', //仅为示例，并非真实的接口地址
       data: {
         userid: e.detail.value.userId ,
         pwd: e.detail.value.password

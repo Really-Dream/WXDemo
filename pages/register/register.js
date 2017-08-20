@@ -44,7 +44,7 @@ Page({
   onLoad: function(){
 	  var that = this;
 	  wx.request({
-      url: 'https://www.whoisyours.cn/AppDemo/org',
+      url: appInstance.globalData.url +'org',
       data: {},
       header: {
           'content-type': 'application/json'
@@ -80,7 +80,7 @@ Page({
       })
     }else{
     wx.request({
-      url: 'https://www.whoisyours.cn/AppDemo/create',
+      url: appInstance.globalData.url +'create',
       data: {
         userid: e.detail.value.userId ,
         pwd: e.detail.value.password,
