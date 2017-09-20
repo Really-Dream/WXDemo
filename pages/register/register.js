@@ -42,6 +42,7 @@ Page({
     }
   },
   onLoad: function(){
+    var appInstance = getApp();
 	  var that = this;
 	  wx.request({
       url: appInstance.globalData.url +'org',
@@ -58,6 +59,7 @@ Page({
 
   },
   formSubmit: function (e) {
+    var appInstance = getApp();
     var that =  this;
     console.log(e.detail.value.userId.length);
     if (e.detail.value.userId.length<=0){
